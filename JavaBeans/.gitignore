@@ -1,0 +1,11 @@
+# ignore hidden files
+.classpath
+.buildpath
+.settings/
+.project
+
+# ignore bin and all files in bin directory
+bin
+bin/
+
+
