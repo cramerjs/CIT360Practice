@@ -227,6 +227,7 @@ public class PetPost2 {
 	petsByOwnerTree.put(pi, petHashSet3);
 	petsByOwnerTree.put(harryPotter, union);
 	petsByOwnerTree.put(hermioneGranger, symmetricDiff);
+	
 	System.out.println("Contents of petsByOwner " + petsByOwnerTree);
 	System.out.println(petsByOwnerTree.containsValue(richardParker));
 	System.out.println(petsByOwnerTree.containsValue(petHashSet3));
