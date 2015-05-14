@@ -55,3 +55,7 @@ local.properties
 .recommenders/
 CIT260/
 CIT-360-Cody/
+Thumbs.db
+
+# open files
+~\$*
