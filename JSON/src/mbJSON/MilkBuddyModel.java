@@ -18,7 +18,6 @@ public class MilkBuddyModel {
 		GrocerBean pigglyWiggly = new GrocerBean("1.10", "Piggly Wiggly", "89145", "900 N 900 W");
 		String jsonString = null;
 		
-		
 		// Convert an object into a JSON String
 		System.out.println("Object -> JSON String:");
 		

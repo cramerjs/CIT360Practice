@@ -1,7 +1,6 @@
 package collectionsExample;
 
 import java.util.*;
-
 import collectionsExample.OwnerBean.Continent;
 
 public class PetPost2 {
@@ -11,39 +10,24 @@ public class PetPost2 {
 	Continent AFRICA = null, ASIA = null, EUROPE = null, OCEANIA = null, NORTHAMERICA = null, SOUTHAMERICA = null, ANTARCTICA = null;
 	
 	// create new PetBeans
-		
 	PetBean tod = new PetBean("Tod", "Fox", "red", "Widow Tweed");
-	
 	PetBean copper = new PetBean("Copper", "Hound Dog", "darkbrown-brown-white", "Amos Slade");
-	
 	PetBean richardParker = new PetBean("Richard Parker", "Bengal Tiger", "orange-white", "Pi Patel");
-	
 	PetBean clifford = new PetBean("Clifford", "Big Red Dog", "red", "Jetta");
-	
 	PetBean lassie = new PetBean("Lassie", "collie", "white-brown", "Rudd Weatherwax");
-	
 	PetBean elliot = new PetBean("Elliot", "dragon", "green", "Pete");
-	
 	PetBean hedwig = new PetBean("Hedwig", "owl", "white", "Harry Potter");
-	
 	PetBean scabbers = new PetBean("Scabbers", "rat", "brown", "Ron Weasley");
-	
 	PetBean crookshanks = new PetBean("Crookshanks", "cat", "orange", "Hermione Granger");
 	
 	// create new OwnerBeans
-	
 	OwnerBean widowTweed = new OwnerBean("Widow Tweed", "blackwidow77", NORTHAMERICA, true);
-	
 	OwnerBean amosSlade = new OwnerBean("Amos Slade", "KJVamos37", NORTHAMERICA, false);
-	
 	OwnerBean pi = new OwnerBean("Pi Patel", "yannFanPatel123", ASIA, true);
-	
 	OwnerBean harryPotter = new OwnerBean("Harry Potter", "voldemortKiller2009", EUROPE, true);
-
 	OwnerBean ronWeasley = new OwnerBean("Ron Weasley", "lameClaimToFame2010", EUROPE, false);
-
 	OwnerBean hermioneGranger = new OwnerBean("Hermione Granger", "emmaHotson2011", EUROPE, true);
-
+	
 	
 	// --- ArrayList --- //
 	
@@ -64,10 +48,8 @@ public class PetPost2 {
 	// Iterator
 	Iterator<PetBean> itr = petArrayList.iterator();
 	while(itr.hasNext()) {
-		
 		PetBean element = itr.next();
 		System.out.println(element.toString() + " ");
-		
 	}
 	
 	// example of contains method
@@ -89,9 +71,7 @@ public class PetPost2 {
 
 	// example of clear and isEmpty methods
 	petArrayList.clear();
-	System.out.println("ownerArrayList is empty: " + petArrayList.isEmpty());
-	
-	System.out.println();
+	System.out.println("ownerArrayList is empty: " + petArrayList.isEmpty() + "\n");
 
 	
 	// --- HashSet --- //
@@ -107,6 +87,7 @@ public class PetPost2 {
 	petHashSetDup.add(clifford);
 	petHashSetDup.add(clifford);
 	
+	// creates various HashSets for later experimentation
 	HashSet<PetBean> petHashSet = new HashSet<PetBean>();
 	petHashSet.add(tod);
 	petHashSet.add(copper);
@@ -165,17 +146,17 @@ public class PetPost2 {
 	HashSet<PetBean> tmp = new HashSet<PetBean>(petHashSet4);
 	tmp.retainAll(petHashSet5);
 	symmetricDiff.removeAll(tmp);
-	System.out.println("Contents of symmetricDiff " + symmetricDiff);
+	System.out.println("Contents of symmetricDiff " + symmetricDiff + "\n");
 
-	System.out.println();
 	
 	// --- HashMap --- //
-	// object that maps keys to values, cannot contain duplicate keys, 1:1 (key:value)
 	
-		// Hash //
+		// Map //
+		// object that maps keys to values, cannot contain duplicate keys, 1:1 (key:value), not sorted
 	
 	System.out.println(" --- Hash Map --- ");
 	
+	// creates a HashMap with OwnerBeans as keys and HashSets of PetBeans as values
 	HashMap<OwnerBean, HashSet<PetBean>> petsByOwner = new HashMap<OwnerBean, HashSet<PetBean>>();
 	petsByOwner.put(widowTweed, petHashSet);
 	petsByOwner.put(amosSlade, petHashSet2);
@@ -184,6 +165,7 @@ public class PetPost2 {
 	System.out.println(petsByOwner.containsValue(richardParker));
 	System.out.println(petsByOwner.containsValue(petHashSet3));
 	
+	// creates a HashMap with Integers as keys and OwnerBeans as Values
 	HashMap<Integer, OwnerBean> ownerMapByUID = new HashMap<Integer, OwnerBean>();
 	ownerMapByUID.put(0001, harryPotter);
 	ownerMapByUID.put(0002, ronWeasley);
@@ -199,28 +181,30 @@ public class PetPost2 {
 	ownerMapByUID.remove(0003, hermioneGranger);
 	System.out.println("Contents of ownerMapByUID" + ownerMapByUID);
 	
+	// creates a simple HashMap with Doubles as keys and Strings as values
 	HashMap<Double, String> petMapByUniqueIdNumber = new HashMap<Double, String>();
 	petMapByUniqueIdNumber.put(new Double(000000), "Tod");
 	petMapByUniqueIdNumber.put(new Double(000001), "Copper");
 	petMapByUniqueIdNumber.put(new Double(000002), "Rex");
 	petMapByUniqueIdNumber.put(new Double(000003), "Woody");
 	petMapByUniqueIdNumber.put(new Double(041234), "Buzz");
-//	petMapByUniqueIdNumber.put(new Double(""), "Buzz");
+//	petMapByUniqueIdNumber.put(new Double(""), "Buzz");  // cannot insert empty string as key where Double is expected
 	petMapByUniqueIdNumber.put(new Double(999999999), "Buzz");
 	petMapByUniqueIdNumber.put(new Double(-999999999), "Buzz");
 	petMapByUniqueIdNumber.put(new Double(-001), "Buzz");
+	petMapByUniqueIdNumber.put(new Double(-001), "Rex"); // replaces previous value at this key (Buzz) with new value (Rex)
 
-
-	System.out.println("Contents of petMapByUniqueIdNumber" + petMapByUniqueIdNumber);
+	System.out.println("Contents of petMapByUniqueIdNumber" + petMapByUniqueIdNumber + "\n");
 	
-	System.out.println();
 	
 	// --- TreeMap --- //
 	
 		// Tree //
+		// sorted map
 	
 	System.out.println(" --- Tree Map --- ");
 	
+	// creates TreeMap with OwnerBeans as keys and HashSets of PetBeans as values
 	TreeMap<OwnerBean, HashSet<PetBean>> petsByOwnerTree = new TreeMap<OwnerBean, HashSet<PetBean>>();
 	petsByOwnerTree.put(widowTweed, petHashSet);
 	petsByOwnerTree.put(amosSlade, petHashSet2);
@@ -228,12 +212,25 @@ public class PetPost2 {
 	petsByOwnerTree.put(harryPotter, union);
 	petsByOwnerTree.put(hermioneGranger, symmetricDiff);
 	
-	System.out.println("Contents of petsByOwner " + petsByOwnerTree);
-	System.out.println(petsByOwnerTree.containsValue(richardParker));
-	System.out.println(petsByOwnerTree.containsValue(petHashSet3));
-	System.out.println(petsByOwnerTree.headMap(pi));
-	System.out.println(petsByOwnerTree.tailMap(pi));
-	System.out.println(petsByOwnerTree.subMap(harryPotter, pi)); // pi is not included in the retrieved values
+	// TreeMap method experimentation
+	System.out.println("Contents of petsByOwnerTree " + petsByOwnerTree);
+	System.out.println(petsByOwnerTree.containsValue(richardParker)); // cannot return/identify a nested object directly from Tree
+	System.out.println(petsByOwnerTree.containsValue(petHashSet3)); // can identify a non-nested set
+	System.out.println(petsByOwnerTree.headMap(pi)); // returns all key-value pairs before, but not including pi
+	System.out.println(petsByOwnerTree.tailMap(pi)); // returns all key-value pairs including pi to end of Map 
+	System.out.println(petsByOwnerTree.subMap(harryPotter, pi)); // pi is not included in the returned values
+	
+	// example of sorted nature of TreeMaps
+	TreeMap<Double, String> petTreeMapByUniqueIdNumber = new TreeMap<Double, String>();
+	petTreeMapByUniqueIdNumber.put(new Double(000000), "Tod");
+	petTreeMapByUniqueIdNumber.put(new Double(000001), "Copper");
+	petTreeMapByUniqueIdNumber.put(new Double(000002), "Rex");
+	petTreeMapByUniqueIdNumber.put(new Double(000003), "Woody");
+	petTreeMapByUniqueIdNumber.put(new Double(041234), "Buzz");
+	petTreeMapByUniqueIdNumber.put(new Double(999999999), "Buzz");
+	petTreeMapByUniqueIdNumber.put(new Double(-999999999), "Buzz");
+	petTreeMapByUniqueIdNumber.put(new Double(-001), "Rex");
+	System.out.println("Contents of petTreeMapByUniqueIdNumber " + petTreeMapByUniqueIdNumber);
 	
 	}
 	

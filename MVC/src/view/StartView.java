@@ -8,7 +8,7 @@ public class StartView {
 	
 	private int zipCode;
 	
-	StartView() {
+	public StartView() {
 		
 		// no arg constructor
 		

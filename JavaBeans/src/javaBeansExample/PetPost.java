@@ -18,7 +18,7 @@ public class PetPost {
 		cowboy.setOwner("Wyatt Earp");
 		cowboy.setColor("brindle");
 
-		// ----- CREATE 2 NEW PET OBJ using Full Constructor -----
+		// ----- CREATE 2 NEW PET OBJs using Full Constructor -----
 		
 		PetBean sylvester = new PetBean("Tabby Cat", "b&w", "Grandma");
 
@@ -102,8 +102,10 @@ public class PetPost {
 		String spotColor = spot.getColor();
 		String spotOwner = spot.getOwner();
 				
+		// create spot Pet obj
 		Pet spotLive = new Pet(spotBreed, spotColor, spotOwner);
-			
+		
+		// playDead method experimentation
 		spotLive.playDead(spotOwner, spotBreed);
 		
 	}
