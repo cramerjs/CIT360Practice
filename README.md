@@ -1,16 +1,23 @@
 # CIT360Sandbox
 Sandbox Code for Object Oriented Programming II (BYUI-CIT360)
 
-This repo contains sandbox code related to my studies in OOP2 to be shared with classmates.
+This repo contains sandbox code related to my studies in 
+OOP2 to be shared with classmates.
 
 Included Topics:
 - Java Collections
 - JavaBeans
 - Hibernate
-- JSON Data Serialization
+- JSON, Binary, & XML Data Serialization
 - Socket I/O
-- Android HTTP Communication
+- HTTP URL Communication
 - JUnit
-- Safe Parallel Processing
+- Safe Parallel Processing / Threading
 - MVC Pattern
-- Applicaiton Controller Pattern
+- Application Controller Pattern
+- UML
+  - Use Case Diagrams
+  - Use Case Description
+  - State Diagrams
+  - Sequence Diagrams
+  - System Level Tests
